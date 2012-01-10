@@ -1,0 +1,5 @@
+php-horde-prefs (1.1.7-1) unstable; urgency=low
+
+  * Horde_Prefs package.
+
+ -- Mathieu Parent <sathieu@debian.org>  Tue, 10 Jan 2012 20:42:51 +0100
