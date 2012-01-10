@@ -1,5 +1,7 @@
 php-horde-prefs (1.1.7-1) unstable; urgency=low
 
   * Horde_Prefs package.
+  * Initial packaging (Closes #635807)
+  * Copyright file by Soren Stoutner and Jay Barksdale
 
- -- Mathieu Parent <sathieu@debian.org>  Tue, 10 Jan 2012 20:42:51 +0100
+ -- Mathieu Parent <sathieu@debian.org>  Tue, 10 Jan 2012 21:47:12 +0100
