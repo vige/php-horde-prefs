@@ -1,5 +1,6 @@
-php-horde-prefs (2.0.1-1) UNRELEASED; urgency=low
+php-horde-prefs (2.0.1-1) unstable; urgency=low
 
+  * New upstream version 2.0.1
   * Fixed watchfile
   * Updated Standards-Version to 3.9.3: no change
   * Updated copyright format URL
@@ -7,10 +8,8 @@ php-horde-prefs (2.0.1-1) UNRELEASED; urgency=low
     instead of /usr/share/horde4
   * Updated Homepage
   * Added Vcs-* fields
-  * New upstream version 1.1.8
-  * New upstream version 2.0.1
 
- -- Mathieu Parent <sathieu@debian.org>  Fri, 30 Nov 2012 19:05:40 +0100
+ -- Mathieu Parent <sathieu@debian.org>  Fri, 30 Nov 2012 21:49:32 +0100
 
 php-horde-prefs (1.1.7-1) unstable; urgency=low
 
