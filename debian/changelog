@@ -1,3 +1,9 @@
+php-horde-prefs (2.3.2-1) UNRELEASED; urgency=low
+
+  * New upstream version 2.3.2
+
+ -- Mathieu Parent <sathieu@debian.org>  Sat, 06 Apr 2013 22:38:10 +0200
+
 php-horde-prefs (2.1.0-1) unstable; urgency=low
 
   * New upstream version 2.1.0
