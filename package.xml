@@ -22,10 +22,10 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2013-05-06</date>
- <time>18:58:18</time>
+ <date>2013-05-16</date>
+ <time>11:03:14</time>
  <version>
-  <release>2.4.0</release>
+  <release>2.4.1</release>
   <api>2.2.0</api>
  </version>
  <stability>
@@ -34,9 +34,8 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mms] Add MongoDB storage driver.
-* [mms] Fix removing preference from backend (Bug #12207).
-* [mms] More compact internal/serialized representation of data in Horde_Prefs_Scope.
+* [mms] Fix removing prefs from storage backends (Bug #12208).
+* [mms] Fix fatal error in Horde_Prefs_Scope#valid().
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -58,7 +57,7 @@
    <file baseinstalldir="/" md5sum="5af6018e69de89315a3863e5f3a6c947" name="lib/Horde/Prefs/CategoryManager.php" role="php" />
    <file baseinstalldir="/" md5sum="725449c65c24e6a964d38433c6a0faed" name="lib/Horde/Prefs/Exception.php" role="php" />
    <file baseinstalldir="/" md5sum="1f8b62441e314066843af03905701819" name="lib/Horde/Prefs/Identity.php" role="php" />
-   <file baseinstalldir="/" md5sum="e272731188b24a117ce6100c56d08e24" name="lib/Horde/Prefs/Scope.php" role="php" />
+   <file baseinstalldir="/" md5sum="2543d1fa7c72f304c01d821c4dbe7cae" name="lib/Horde/Prefs/Scope.php" role="php" />
    <file baseinstalldir="/" md5sum="b45bf4d319911cf5f05764e3ed72bf77" name="lib/Horde/Prefs/Translation.php" role="php">
     <tasks:replace from="@data_dir@" to="data_dir" type="pear-config" />
    </file>
@@ -854,6 +853,22 @@ Initial release as a PEAR package
 * [mms] Add MongoDB storage driver.
 * [mms] Fix removing preference from backend (Bug #12207).
 * [mms] More compact internal/serialized representation of data in Horde_Prefs_Scope.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.4.1</release>
+    <api>2.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-05-16</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mms] Fix removing prefs from storage backends (Bug #12208).
+* [mms] Fix fatal error in Horde_Prefs_Scope#valid().
    </notes>
   </release>
  </changelog>
