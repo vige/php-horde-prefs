@@ -1,9 +1,9 @@
-php-horde-prefs (2.4.1-2) UNRELEASED; urgency=low
+php-horde-prefs (2.4.1-2) unstable; urgency=low
 
   * Use pristine-tar
   * Use pristine-tar
 
- -- Mathieu Parent <sathieu@debian.org>  Mon, 27 May 2013 08:47:10 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Thu, 06 Jun 2013 09:14:59 +0200
 
 php-horde-prefs (2.4.1-1) unstable; urgency=low
 
