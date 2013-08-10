@@ -22,11 +22,11 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2013-05-16</date>
- <time>11:03:14</time>
+ <date>2013-07-16</date>
+ <time>19:30:32</time>
  <version>
-  <release>2.4.1</release>
-  <api>2.2.0</api>
+  <release>2.5.0</release>
+  <api>2.5.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -34,8 +34,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mms] Fix removing prefs from storage backends (Bug #12208).
-* [mms] Fix fatal error in Horde_Prefs_Scope#valid().
+* [mms] Add ability to override locked pref status when setting value via Horde_Prefs#setValue().
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -61,7 +60,7 @@
    <file baseinstalldir="/" md5sum="b45bf4d319911cf5f05764e3ed72bf77" name="lib/Horde/Prefs/Translation.php" role="php">
     <tasks:replace from="@data_dir@" to="data_dir" type="pear-config" />
    </file>
-   <file baseinstalldir="/" md5sum="536edde6b1fd03bc902aa64592732e18" name="lib/Horde/Prefs.php" role="php" />
+   <file baseinstalldir="/" md5sum="51fa81861fe89e6eb79c6fef1206f5dc" name="lib/Horde/Prefs.php" role="php" />
    <file baseinstalldir="/" md5sum="2c2e69fdaf45f5dd3c920a193f8cdc13" name="locale/ar/LC_MESSAGES/Horde_Prefs.mo" role="data" />
    <file baseinstalldir="/" md5sum="95f04a115a9843f25b221a3f45b4a1cb" name="locale/ar/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="0803503f8158456f7dd5c9a4057bc01c" name="locale/bg/LC_MESSAGES/Horde_Prefs.mo" role="data" />
@@ -80,8 +79,8 @@
    <file baseinstalldir="/" md5sum="797ff13fcf7cd0edcd82adae50eb3fe4" name="locale/el/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="bfd18ee5098ef01b1c7cc9f07f20a724" name="locale/en/LC_MESSAGES/Horde_Prefs.mo" role="data" />
    <file baseinstalldir="/" md5sum="fb9cf2e989dba2b898b87770efa6ad86" name="locale/en/LC_MESSAGES/Horde_Prefs.po" role="data" />
-   <file baseinstalldir="/" md5sum="ec29737caea5b2d0abd1e702ef409da2" name="locale/es/LC_MESSAGES/Horde_Prefs.mo" role="data" />
-   <file baseinstalldir="/" md5sum="7ac5c256a89f45411110c3a47b5e2b7b" name="locale/es/LC_MESSAGES/Horde_Prefs.po" role="data" />
+   <file baseinstalldir="/" md5sum="95d807a63dbc43f62e0808ecd77211e2" name="locale/es/LC_MESSAGES/Horde_Prefs.mo" role="data" />
+   <file baseinstalldir="/" md5sum="495fecbcb0f356c3fad84308c6d705d6" name="locale/es/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="5cd4b54b3e06dce88fed3c99e448bba9" name="locale/et/LC_MESSAGES/Horde_Prefs.mo" role="data" />
    <file baseinstalldir="/" md5sum="0c077e38381af2c5aad749fbcaff7f0a" name="locale/et/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="14293c899866e4a9371493809a4071a6" name="locale/eu/LC_MESSAGES/Horde_Prefs.mo" role="data" />
@@ -106,8 +105,8 @@
    <file baseinstalldir="/" md5sum="baea9d5ee9337e0dff8c2675c6543646" name="locale/is/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="51b0ce1e13bf06e18d66617ad1e4d7b9" name="locale/it/LC_MESSAGES/Horde_Prefs.mo" role="data" />
    <file baseinstalldir="/" md5sum="b8ba06578bcf2f89afb0c321efb8511c" name="locale/it/LC_MESSAGES/Horde_Prefs.po" role="data" />
-   <file baseinstalldir="/" md5sum="d94d0a02ea68178538a1751dc4b1a15c" name="locale/ja/LC_MESSAGES/Horde_Prefs.mo" role="data" />
-   <file baseinstalldir="/" md5sum="2a605e2bcc153f6a168d8b7786859b0a" name="locale/ja/LC_MESSAGES/Horde_Prefs.po" role="data" />
+   <file baseinstalldir="/" md5sum="a434511554ac55e8459be7dbfd6dd387" name="locale/ja/LC_MESSAGES/Horde_Prefs.mo" role="data" />
+   <file baseinstalldir="/" md5sum="827e81243fe4b0334d2c7f2d31be9d00" name="locale/ja/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="bfcaf0c604df7a5540968a930f98a787" name="locale/km/LC_MESSAGES/Horde_Prefs.mo" role="data" />
    <file baseinstalldir="/" md5sum="cc58d132540aba72b49e4c514d693d28" name="locale/km/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="360ab8c36bb337e6ec05f30bbc970902" name="locale/ko/LC_MESSAGES/Horde_Prefs.mo" role="data" />
@@ -263,7 +262,7 @@
    <package>
     <name>Horde_Mongo</name>
     <channel>pear.horde.org</channel>
-    <min>1.0.0beta1</min>
+    <min>1.0.0</min>
     <max>2.0.0alpha1</max>
     <exclude>2.0.0alpha1</exclude>
    </package>
@@ -869,6 +868,21 @@ Initial release as a PEAR package
    <notes>
 * [mms] Fix removing prefs from storage backends (Bug #12208).
 * [mms] Fix fatal error in Horde_Prefs_Scope#valid().
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.5.0</release>
+    <api>2.5.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-07-16</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mms] Add ability to override locked pref status when setting value via Horde_Prefs#setValue().
    </notes>
   </release>
  </changelog>
