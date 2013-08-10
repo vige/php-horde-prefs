@@ -1,3 +1,9 @@
+php-horde-prefs (2.5.0-1) UNRELEASED; urgency=low
+
+  * New upstream version 2.5.0
+
+ -- Mathieu Parent <sathieu@debian.org>  Sat, 10 Aug 2013 19:37:52 +0200
+
 php-horde-prefs (2.4.1-2) unstable; urgency=low
 
   * Use pristine-tar
