@@ -22,10 +22,10 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2013-07-16</date>
- <time>19:30:32</time>
+ <date>2013-10-28</date>
+ <time>12:06:17</time>
  <version>
-  <release>2.5.0</release>
+  <release>2.5.1</release>
   <api>2.5.0</api>
  </version>
  <stability>
@@ -34,7 +34,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [mms] Add ability to override locked pref status when setting value via Horde_Prefs#setValue().
+* [mms] Fix iteration of Horde_Prefs_Scope object.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -56,7 +56,7 @@
    <file baseinstalldir="/" md5sum="5af6018e69de89315a3863e5f3a6c947" name="lib/Horde/Prefs/CategoryManager.php" role="php" />
    <file baseinstalldir="/" md5sum="725449c65c24e6a964d38433c6a0faed" name="lib/Horde/Prefs/Exception.php" role="php" />
    <file baseinstalldir="/" md5sum="1f8b62441e314066843af03905701819" name="lib/Horde/Prefs/Identity.php" role="php" />
-   <file baseinstalldir="/" md5sum="2543d1fa7c72f304c01d821c4dbe7cae" name="lib/Horde/Prefs/Scope.php" role="php" />
+   <file baseinstalldir="/" md5sum="1032b30acb5c60b92902a3ed436721bc" name="lib/Horde/Prefs/Scope.php" role="php" />
    <file baseinstalldir="/" md5sum="b45bf4d319911cf5f05764e3ed72bf77" name="lib/Horde/Prefs/Translation.php" role="php">
     <tasks:replace from="@data_dir@" to="data_dir" type="pear-config" />
    </file>
@@ -156,7 +156,7 @@
    <file baseinstalldir="/" md5sum="35ced96f69ac01b61b0d7f2433a52dc8" name="test/Horde/Prefs/Unit/Storage/Sql/Pdo/MysqlTest.php" role="test" />
    <file baseinstalldir="/" md5sum="6294cdaafaa685339d066fef5cf76fd5" name="test/Horde/Prefs/Unit/Storage/Sql/Pdo/PgsqlTest.php" role="test" />
    <file baseinstalldir="/" md5sum="fe956634fbc92a72b8b481ab6c9cd5c2" name="test/Horde/Prefs/Unit/Storage/Sql/Pdo/SqliteTest.php" role="test" />
-   <file baseinstalldir="/" md5sum="9ca64c18cc1feb0d8c9e7fc67a04e442" name="test/Horde/Prefs/Unit/Storage/Sql/Base.php" role="test" />
+   <file baseinstalldir="/" md5sum="a9233429ddf87742905f9ac5ce775994" name="test/Horde/Prefs/Unit/Storage/Sql/Base.php" role="test" />
    <file baseinstalldir="/" md5sum="55171bbb14c7886174f1bb4b308d1522" name="test/Horde/Prefs/Unit/Storage/Sql/MysqliTest.php" role="test" />
    <file baseinstalldir="/" md5sum="1c3c4e86d09c4853e398c68e6ea4ce8d" name="test/Horde/Prefs/Unit/Storage/Sql/MysqlTest.php" role="test" />
    <file baseinstalldir="/" md5sum="5574d1ced2c23236eeefd7e6bd87aa44" name="test/Horde/Prefs/Unit/Storage/FileTest.php" role="test" />
@@ -883,6 +883,21 @@ Initial release as a PEAR package
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [mms] Add ability to override locked pref status when setting value via Horde_Prefs#setValue().
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.5.1</release>
+    <api>2.5.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-10-28</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [mms] Fix iteration of Horde_Prefs_Scope object.
    </notes>
   </release>
  </changelog>
