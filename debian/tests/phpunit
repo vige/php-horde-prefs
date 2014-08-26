@@ -1,0 +1,2 @@
+#!/bin/sh
+php Horde_Prefs-2.6.0/test/Horde/Prefs/AllTests.php
