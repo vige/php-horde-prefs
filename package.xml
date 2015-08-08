@@ -22,10 +22,10 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2015-04-28</date>
- <time>15:53:44</time>
+ <date>2015-07-31</date>
+ <time>00:10:50</time>
  <version>
-  <release>2.7.3</release>
+  <release>2.7.4</release>
   <api>2.7.0</api>
  </version>
  <stability>
@@ -34,7 +34,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [jan] Fix issues with certain locales like Turkish.
+* [jan] Updated UK translation.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -140,8 +140,8 @@
    <file baseinstalldir="/" md5sum="60532edd2e3c5646b5678a9a4e44323d" name="locale/sv/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="a0f3fb9c05605194dbb71888101b6ac4" name="locale/tr/LC_MESSAGES/Horde_Prefs.mo" role="data" />
    <file baseinstalldir="/" md5sum="6ce8d6a4013f34ec4ea6a7923dbf82f4" name="locale/tr/LC_MESSAGES/Horde_Prefs.po" role="data" />
-   <file baseinstalldir="/" md5sum="a514d377a223163e90b14d3d2bf42dfd" name="locale/uk/LC_MESSAGES/Horde_Prefs.mo" role="data" />
-   <file baseinstalldir="/" md5sum="5c8315c939edc3a0406c5089ebfd6e67" name="locale/uk/LC_MESSAGES/Horde_Prefs.po" role="data" />
+   <file baseinstalldir="/" md5sum="15bf77b0de9967467e361c1391f40928" name="locale/uk/LC_MESSAGES/Horde_Prefs.mo" role="data" />
+   <file baseinstalldir="/" md5sum="36e2884afe5bfdd3856375d5e1d3914e" name="locale/uk/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="7f0eb26d23605b18f367444a10bf964a" name="locale/zh_CN/LC_MESSAGES/Horde_Prefs.mo" role="data" />
    <file baseinstalldir="/" md5sum="e5f3a6ac8356a86d3ff3ca987e220bed" name="locale/zh_CN/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="880ffc535ee942a9f503c2a89554ac2c" name="locale/zh_TW/LC_MESSAGES/Horde_Prefs.mo" role="data" />
@@ -1002,6 +1002,21 @@ Initial release as a PEAR package
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [jan] Fix issues with certain locales like Turkish.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.7.4</release>
+    <api>2.7.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-07-31</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [jan] Updated UK translation.
    </notes>
   </release>
  </changelog>
