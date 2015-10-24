@@ -1,8 +1,8 @@
-php-horde-prefs (2.7.4-2) UNRELEASED; urgency=medium
+php-horde-prefs (2.7.4-2) unstable; urgency=medium
 
   * Upgaded to debhelper compat 9
 
- -- Mathieu Parent <sathieu@debian.org>  Wed, 21 Oct 2015 07:47:08 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Sat, 24 Oct 2015 21:11:20 +0200
 
 php-horde-prefs (2.7.4-1) unstable; urgency=medium
 
