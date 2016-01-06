@@ -1,8 +1,8 @@
-php-horde-prefs (2.7.5-1) UNRELEASED; urgency=medium
+php-horde-prefs (2.7.5-1) unstable; urgency=medium
 
   * New upstream version 2.7.5
 
- -- Mathieu Parent <sathieu@debian.org>  Wed, 06 Jan 2016 07:10:33 +0100
+ -- Mathieu Parent <sathieu@debian.org>  Wed, 06 Jan 2016 08:18:36 +0100
 
 php-horde-prefs (2.7.4-2) unstable; urgency=medium
 
