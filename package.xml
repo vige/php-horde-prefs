@@ -22,10 +22,10 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2016-01-05</date>
- <time>14:10:23</time>
+ <date>2016-03-08</date>
+ <time>21:34:18</time>
  <version>
-  <release>2.7.5</release>
+  <release>2.7.6</release>
   <api>2.7.0</api>
  </version>
  <stability>
@@ -34,7 +34,8 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [jan] Improve Oracle compatibility.
+* [jan] Update Greek translation (Limperis Antonis &lt;limperis@cti.gr&gt;).
+* [jan] Mark PHP 7 as supported.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -76,8 +77,8 @@
    <file baseinstalldir="/" md5sum="0ab3b03e2f96753fff4ba5b652e50208" name="locale/da/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="bc34e802e829d11d778890d9a145b6a3" name="locale/de/LC_MESSAGES/Horde_Prefs.mo" role="data" />
    <file baseinstalldir="/" md5sum="2816242ceefccdc973e43a109253ec07" name="locale/de/LC_MESSAGES/Horde_Prefs.po" role="data" />
-   <file baseinstalldir="/" md5sum="043d879f7086a6e2322c22909f1cbc3f" name="locale/el/LC_MESSAGES/Horde_Prefs.mo" role="data" />
-   <file baseinstalldir="/" md5sum="bc6faccd4d946397562bdb9de039ab2f" name="locale/el/LC_MESSAGES/Horde_Prefs.po" role="data" />
+   <file baseinstalldir="/" md5sum="3bdb49cab95c4e5d1397ca4dc01e28cc" name="locale/el/LC_MESSAGES/Horde_Prefs.mo" role="data" />
+   <file baseinstalldir="/" md5sum="52c25919405f60e831c657c9865e776d" name="locale/el/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="95d807a63dbc43f62e0808ecd77211e2" name="locale/es/LC_MESSAGES/Horde_Prefs.mo" role="data" />
    <file baseinstalldir="/" md5sum="495fecbcb0f356c3fad84308c6d705d6" name="locale/es/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="5cd4b54b3e06dce88fed3c99e448bba9" name="locale/et/LC_MESSAGES/Horde_Prefs.mo" role="data" />
@@ -174,8 +175,8 @@
   <required>
    <php>
     <min>5.3.0</min>
-    <max>6.0.0alpha1</max>
-    <exclude>6.0.0alpha1</exclude>
+    <max>8.0.0alpha1</max>
+    <exclude>8.0.0alpha1</exclude>
    </php>
    <pearinstaller>
     <min>1.7.0</min>
@@ -1032,6 +1033,22 @@ Initial release as a PEAR package
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [jan] Improve Oracle compatibility.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.7.6</release>
+    <api>2.7.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2016-03-08</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [jan] Update Greek translation (Limperis Antonis &lt;limperis@cti.gr&gt;).
+* [jan] Mark PHP 7 as supported.
    </notes>
   </release>
  </changelog>
