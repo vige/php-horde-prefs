@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.5" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.10.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
  <name>Horde_Prefs</name>
  <channel>pear.horde.org</channel>
  <summary>Horde Preferences API</summary>
@@ -22,11 +22,11 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2016-03-08</date>
- <time>21:34:18</time>
+ <date>2016-09-01</date>
+ <time>18:06:17</time>
  <version>
-  <release>2.7.6</release>
-  <api>2.7.0</api>
+  <release>2.8.0</release>
+  <api>2.8.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -34,8 +34,9 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [jan] Update Greek translation (Limperis Antonis &lt;limperis@cti.gr&gt;).
-* [jan] Mark PHP 7 as supported.
+* [jan] Use more efficient database access in SQL backend.
+* [jan] Fix and optimize removing preferences for a single application.
+* [jan] Add Horde_Prefs::removeAll().
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -43,26 +44,27 @@
     <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
    </file>
    <file baseinstalldir="/" md5sum="321bf41f280cf805086dd5a720b37785" name="doc/Horde/Prefs/COPYING" role="doc" />
-   <file baseinstalldir="/" md5sum="1404695aff08cb2f62e1e35b3c1f417a" name="lib/Horde/Prefs/Cache/Base.php" role="php" />
+   <file baseinstalldir="/" md5sum="4018c850aa5a1e13358ea70ea1f6e895" name="doc/Horde/Prefs/UPGRADING" role="doc" />
+   <file baseinstalldir="/" md5sum="893ba0b6d94d728e5d827b8f9d0a6e6d" name="lib/Horde/Prefs/Cache/Base.php" role="php" />
    <file baseinstalldir="/" md5sum="73493be0cf9fbdf3732f8a2a12f02b46" name="lib/Horde/Prefs/Cache/HordeCache.php" role="php" />
-   <file baseinstalldir="/" md5sum="213590de9d61fad94273d1af00ff2f75" name="lib/Horde/Prefs/Cache/Null.php" role="php" />
-   <file baseinstalldir="/" md5sum="112acfa52ce5c3ca1db973330133e201" name="lib/Horde/Prefs/Cache/Session.php" role="php" />
-   <file baseinstalldir="/" md5sum="d58eb31470c868600d93d34235f46c94" name="lib/Horde/Prefs/Storage/Base.php" role="php" />
-   <file baseinstalldir="/" md5sum="2d2b118f9bc30eb37c69cd14ff784d5f" name="lib/Horde/Prefs/Storage/File.php" role="php" />
-   <file baseinstalldir="/" md5sum="4a62ded0df079ce53523d5d4a569979d" name="lib/Horde/Prefs/Storage/Imsp.php" role="php" />
-   <file baseinstalldir="/" md5sum="915d584995163d82877d7731ba01fb87" name="lib/Horde/Prefs/Storage/KolabImap.php" role="php" />
-   <file baseinstalldir="/" md5sum="9661d1f72a659c2160b71e72bcfb55de" name="lib/Horde/Prefs/Storage/Ldap.php" role="php" />
-   <file baseinstalldir="/" md5sum="818ffcc5ac1e4ca2bbef7bb6c58787fb" name="lib/Horde/Prefs/Storage/Mongo.php" role="php" />
-   <file baseinstalldir="/" md5sum="f9d9eb55216853f9f12e03882413b083" name="lib/Horde/Prefs/Storage/Null.php" role="php" />
-   <file baseinstalldir="/" md5sum="84dd056bba2fb90551c1645da5700b9f" name="lib/Horde/Prefs/Storage/Sql.php" role="php" />
-   <file baseinstalldir="/" md5sum="f543d204f29f92166700db21a61cd82c" name="lib/Horde/Prefs/CategoryManager.php" role="php" />
-   <file baseinstalldir="/" md5sum="7d7abc93435b045973d29234182e5374" name="lib/Horde/Prefs/Exception.php" role="php" />
+   <file baseinstalldir="/" md5sum="700033a5bf9582c4c82ffb3d7b51bd6c" name="lib/Horde/Prefs/Cache/Null.php" role="php" />
+   <file baseinstalldir="/" md5sum="7ce6d41ad0dca15ffc21613a672ce7e3" name="lib/Horde/Prefs/Cache/Session.php" role="php" />
+   <file baseinstalldir="/" md5sum="055ee66ecd8b888fbda212d84d14c964" name="lib/Horde/Prefs/Storage/Base.php" role="php" />
+   <file baseinstalldir="/" md5sum="e1bedfd17976bb56154568f8c51d9e17" name="lib/Horde/Prefs/Storage/File.php" role="php" />
+   <file baseinstalldir="/" md5sum="b3fda126237f328411d1a1bc378ff073" name="lib/Horde/Prefs/Storage/Imsp.php" role="php" />
+   <file baseinstalldir="/" md5sum="b9e015537ae9474605a2ed7e05bae9da" name="lib/Horde/Prefs/Storage/KolabImap.php" role="php" />
+   <file baseinstalldir="/" md5sum="ee12b8410fe21ee519fa48999bf9f00e" name="lib/Horde/Prefs/Storage/Ldap.php" role="php" />
+   <file baseinstalldir="/" md5sum="cad05eaf51ff9931a35e386a8e80f71d" name="lib/Horde/Prefs/Storage/Mongo.php" role="php" />
+   <file baseinstalldir="/" md5sum="ac45378ee00437e4a59627c356bce4fc" name="lib/Horde/Prefs/Storage/Null.php" role="php" />
+   <file baseinstalldir="/" md5sum="3358e1bee75f094587bfa37aebe1598c" name="lib/Horde/Prefs/Storage/Sql.php" role="php" />
+   <file baseinstalldir="/" md5sum="1d672002d658cfac0e96732ca8e82fbb" name="lib/Horde/Prefs/CategoryManager.php" role="php" />
+   <file baseinstalldir="/" md5sum="d00969c09cfde14cf30c68030c91db8c" name="lib/Horde/Prefs/Exception.php" role="php" />
    <file baseinstalldir="/" md5sum="01c61ed9d3bf4b61e878cceca4af63ad" name="lib/Horde/Prefs/Identity.php" role="php" />
-   <file baseinstalldir="/" md5sum="7a0f5ed1c8e9b40f0bb70b5821f11991" name="lib/Horde/Prefs/Scope.php" role="php" />
-   <file baseinstalldir="/" md5sum="225aab5d977a428ee914fa258ea61dab" name="lib/Horde/Prefs/Translation.php" role="php">
+   <file baseinstalldir="/" md5sum="eb08e59d730e261bf84b4902a63227d5" name="lib/Horde/Prefs/Scope.php" role="php" />
+   <file baseinstalldir="/" md5sum="ba13890db96da1e68445a4b440c69fe0" name="lib/Horde/Prefs/Translation.php" role="php">
     <tasks:replace from="@data_dir@" to="data_dir" type="pear-config" />
    </file>
-   <file baseinstalldir="/" md5sum="b5638535d4c1399083120c1ef4c4b21a" name="lib/Horde/Prefs.php" role="php" />
+   <file baseinstalldir="/" md5sum="7db8c450124bbeb8abfc78cbce90e1bb" name="lib/Horde/Prefs.php" role="php" />
    <file baseinstalldir="/" md5sum="2c2e69fdaf45f5dd3c920a193f8cdc13" name="locale/ar/LC_MESSAGES/Horde_Prefs.mo" role="data" />
    <file baseinstalldir="/" md5sum="2f4545c8a8af4177a391c504bda03c13" name="locale/ar/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="0803503f8158456f7dd5c9a4057bc01c" name="locale/bg/LC_MESSAGES/Horde_Prefs.mo" role="data" />
@@ -75,8 +77,8 @@
    <file baseinstalldir="/" md5sum="8438870630c130f8a4494b55877e34c8" name="locale/cs/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="19415ec52cfd6485fc69cb10f19b2784" name="locale/da/LC_MESSAGES/Horde_Prefs.mo" role="data" />
    <file baseinstalldir="/" md5sum="0ab3b03e2f96753fff4ba5b652e50208" name="locale/da/LC_MESSAGES/Horde_Prefs.po" role="data" />
-   <file baseinstalldir="/" md5sum="bc34e802e829d11d778890d9a145b6a3" name="locale/de/LC_MESSAGES/Horde_Prefs.mo" role="data" />
-   <file baseinstalldir="/" md5sum="2816242ceefccdc973e43a109253ec07" name="locale/de/LC_MESSAGES/Horde_Prefs.po" role="data" />
+   <file baseinstalldir="/" md5sum="9aac5480a5febf6bbbee8bd02b635618" name="locale/de/LC_MESSAGES/Horde_Prefs.mo" role="data" />
+   <file baseinstalldir="/" md5sum="22828772876ccfc0c9b1b33c85b4cdbe" name="locale/de/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="3bdb49cab95c4e5d1397ca4dc01e28cc" name="locale/el/LC_MESSAGES/Horde_Prefs.mo" role="data" />
    <file baseinstalldir="/" md5sum="52c25919405f60e831c657c9865e776d" name="locale/el/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="95d807a63dbc43f62e0808ecd77211e2" name="locale/es/LC_MESSAGES/Horde_Prefs.mo" role="data" />
@@ -147,7 +149,7 @@
    <file baseinstalldir="/" md5sum="f49374fe42b8265ccb836e4c115f8f12" name="locale/zh_CN/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="880ffc535ee942a9f503c2a89554ac2c" name="locale/zh_TW/LC_MESSAGES/Horde_Prefs.mo" role="data" />
    <file baseinstalldir="/" md5sum="642e6c30a1e4e27f6dea5e0369a5be0e" name="locale/zh_TW/LC_MESSAGES/Horde_Prefs.po" role="data" />
-   <file baseinstalldir="/" md5sum="52d23be517dd291e6c60fd5b87604f54" name="locale/Horde_Prefs.pot" role="data" />
+   <file baseinstalldir="/" md5sum="01073884b2abd1eeb959abaf837717de" name="locale/Horde_Prefs.pot" role="data" />
    <file baseinstalldir="/" md5sum="d17fac470dab333f44aefa31680b3644" name="migration/Horde/Prefs/1_horde_prefs_base_tables.php" role="data" />
    <file baseinstalldir="/" md5sum="2db1ad12adff0b2030e517219906fac9" name="migration/Horde/Prefs/2_horde_prefs_upgrade_binary_value.php" role="data" />
    <file baseinstalldir="/" md5sum="1847c65ee57a4bc80cabaff1205dfc38" name="migration/Horde/Prefs/3_horde_prefs_fix_blob_length.php" role="data" />
@@ -290,6 +292,7 @@
   <filelist>
    <install as="horde-prefs" name="bin/horde-prefs" />
    <install as="COPYING" name="doc/Horde/Prefs/COPYING" />
+   <install as="UPGRADING" name="doc/Horde/Prefs/UPGRADING" />
    <install as="Horde/Prefs.php" name="lib/Horde/Prefs.php" />
    <install as="Horde/Prefs/CategoryManager.php" name="lib/Horde/Prefs/CategoryManager.php" />
    <install as="Horde/Prefs/Exception.php" name="lib/Horde/Prefs/Exception.php" />
@@ -1049,6 +1052,23 @@ Initial release as a PEAR package
    <notes>
 * [jan] Update Greek translation (Limperis Antonis &lt;limperis@cti.gr&gt;).
 * [jan] Mark PHP 7 as supported.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.8.0</release>
+    <api>2.8.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2016-09-01</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [jan] Use more efficient database access in SQL backend.
+* [jan] Fix and optimize removing preferences for a single application.
+* [jan] Add Horde_Prefs::removeAll().
    </notes>
   </release>
  </changelog>
