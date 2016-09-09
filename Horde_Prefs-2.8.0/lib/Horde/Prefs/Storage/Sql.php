@@ -1,11 +1,19 @@
 <?php
 /**
- * Preferences storage implementation for a SQL database.
- *
  * Copyright 1999-2016 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
+ *
+ * @author   Jon Parise <jon@horde.org>
+ * @author   Michael Slusarz <slusarz@horde.org>
+ * @category Horde
+ * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
+ * @package  Prefs
+ */
+
+/**
+ * Preferences storage implementation for a SQL database.
  *
  * @author   Jon Parise <jon@horde.org>
  * @author   Michael Slusarz <slusarz@horde.org>
@@ -70,7 +78,7 @@ class Horde_Prefs_Storage_Sql extends Horde_Prefs_Storage_Base
         $values = array($this->_params['user'], $scope_ob->scope);
 
         try {
-            $result = $this->_db->selectAll($query, $values);
+            $result = $this->_db->select($query, $values);
             $columns = $this->_db->columns($this->_params['table']);
         } catch (Horde_Db_Exception $e) {
             throw new Horde_Prefs_Exception($e);
