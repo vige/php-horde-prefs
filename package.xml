@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.10.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.10.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
  <name>Horde_Prefs</name>
  <channel>pear.horde.org</channel>
  <summary>Horde Preferences API</summary>
@@ -22,11 +22,11 @@
   <email>jan@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2017-02-27</date>
- <time>11:40:44</time>
+ <date>2017-10-09</date>
+ <time>12:03:24</time>
  <version>
-  <release>2.8.1</release>
-  <api>2.8.0</api>
+  <release>2.9.0</release>
+  <api>2.9.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -34,7 +34,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
  <notes>
-* [jan] Fix PostgreSQL backend with newer Horde_Db version.
+* [jan] Add Horde_Prefs#getScopeObject().
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -42,8 +42,7 @@
     <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
    </file>
    <file baseinstalldir="/" md5sum="321bf41f280cf805086dd5a720b37785" name="doc/Horde/Prefs/COPYING" role="doc" />
-   <file baseinstalldir="/" md5sum="4018c850aa5a1e13358ea70ea1f6e895" name="doc/Horde/Prefs/UPGRADING" role="doc" />
-   <file baseinstalldir="/" md5sum="80406fc623b74e386115bb0fa352530e" name="doc/horde.yml" role="doc" />
+   <file baseinstalldir="/" md5sum="e30dd3b383048d5c050aed399e3478dd" name="doc/Horde/Prefs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="0d8e3c6eca7e1f2af527b80db5c33f46" name="lib/Horde/Prefs/Cache/Base.php" role="php" />
    <file baseinstalldir="/" md5sum="5983a9df2eac581c80f419050106d1cf" name="lib/Horde/Prefs/Cache/HordeCache.php" role="php" />
    <file baseinstalldir="/" md5sum="c8fd1e2b1d90eb07565cc81277f88471" name="lib/Horde/Prefs/Cache/Null.php" role="php" />
@@ -63,7 +62,7 @@
    <file baseinstalldir="/" md5sum="5bf37b51f42d174a48cbf2b57a3cc96e" name="lib/Horde/Prefs/Translation.php" role="php">
     <tasks:replace from="@data_dir@" to="data_dir" type="pear-config" />
    </file>
-   <file baseinstalldir="/" md5sum="73db92260de9ed436e7f378c13cf167e" name="lib/Horde/Prefs.php" role="php" />
+   <file baseinstalldir="/" md5sum="fc0dac06581981f7b1b4d57cd5439901" name="lib/Horde/Prefs.php" role="php" />
    <file baseinstalldir="/" md5sum="2c2e69fdaf45f5dd3c920a193f8cdc13" name="locale/ar/LC_MESSAGES/Horde_Prefs.mo" role="data" />
    <file baseinstalldir="/" md5sum="da277bd858a0effd1f94da476dc362fa" name="locale/ar/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="0803503f8158456f7dd5c9a4057bc01c" name="locale/bg/LC_MESSAGES/Horde_Prefs.mo" role="data" />
@@ -140,8 +139,8 @@
    <file baseinstalldir="/" md5sum="04084066dd4e84f1a4a7cb28c7c8ed66" name="locale/sl/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="1fec701300f5d83945d80b5ff87b3cd5" name="locale/sv/LC_MESSAGES/Horde_Prefs.mo" role="data" />
    <file baseinstalldir="/" md5sum="cd3685d604e1a81977d4f667c1251a02" name="locale/sv/LC_MESSAGES/Horde_Prefs.po" role="data" />
-   <file baseinstalldir="/" md5sum="a0f3fb9c05605194dbb71888101b6ac4" name="locale/tr/LC_MESSAGES/Horde_Prefs.mo" role="data" />
-   <file baseinstalldir="/" md5sum="00a298dd904c5e0a7492b4c7e4af2408" name="locale/tr/LC_MESSAGES/Horde_Prefs.po" role="data" />
+   <file baseinstalldir="/" md5sum="d838e32305c293ea8f5b63082c99dc6d" name="locale/tr/LC_MESSAGES/Horde_Prefs.mo" role="data" />
+   <file baseinstalldir="/" md5sum="e90000053956d86a65654cb176d34a13" name="locale/tr/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="15bf77b0de9967467e361c1391f40928" name="locale/uk/LC_MESSAGES/Horde_Prefs.mo" role="data" />
    <file baseinstalldir="/" md5sum="4851f19576b44a64a26a4e6a8c25b16f" name="locale/uk/LC_MESSAGES/Horde_Prefs.po" role="data" />
    <file baseinstalldir="/" md5sum="7f0eb26d23605b18f367444a10bf964a" name="locale/zh_CN/LC_MESSAGES/Horde_Prefs.mo" role="data" />
@@ -290,7 +289,6 @@
  <phprelease>
   <filelist>
    <install as="horde-prefs" name="bin/horde-prefs" />
-   <install as="horde.yml" name="doc/horde.yml" />
    <install as="COPYING" name="doc/Horde/Prefs/COPYING" />
    <install as="UPGRADING" name="doc/Horde/Prefs/UPGRADING" />
    <install as="Horde/Prefs.php" name="lib/Horde/Prefs.php" />
@@ -1084,6 +1082,21 @@ Initial release as a PEAR package
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [jan] Fix PostgreSQL backend with newer Horde_Db version.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.9.0</release>
+    <api>2.9.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2017-10-09</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
+   <notes>
+* [jan] Add Horde_Prefs#getScopeObject().
    </notes>
   </release>
  </changelog>
