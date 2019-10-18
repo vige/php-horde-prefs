@@ -1,6 +1,7 @@
 php-horde-prefs (2.9.0-4) UNRELEASED; urgency=medium
 
   * Bump debhelper from old 11 to 12.
+  * salsa-ci.yml: Allow autopkgtest failure
 
  -- Mathieu Parent <sathieu@debian.org>  Wed, 04 Sep 2019 21:12:59 +0200
 
