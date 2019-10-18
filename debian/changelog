@@ -1,10 +1,10 @@
-php-horde-prefs (2.9.0-4) UNRELEASED; urgency=medium
+php-horde-prefs (2.9.0-4) unstable; urgency=medium
 
   * Bump debhelper from old 11 to 12.
   * salsa-ci.yml: Allow autopkgtest failure
   * d/control: Orphaning package (See #942282)
 
- -- Mathieu Parent <sathieu@debian.org>  Wed, 04 Sep 2019 21:12:59 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Fri, 18 Oct 2019 20:12:52 +0200
 
 php-horde-prefs (2.9.0-3) unstable; urgency=medium
 
