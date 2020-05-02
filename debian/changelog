@@ -1,5 +1,7 @@
 php-horde-prefs (2.9.0-5) UNRELEASED; urgency=medium
 
+  * Re-upload to Debian. (Closes: #959272).
+
   * d/control: Add to Uploaders: Mike Gabriel.
   * d/control: Drop from Uploaders: Debian QA Group.
 
