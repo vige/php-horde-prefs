@@ -7,8 +7,9 @@ php-horde-prefs (2.9.0-5) UNRELEASED; urgency=medium
   * d/control: Bump Standards-Version: to 4.5.0. No changes needed.
   * d/control: Add Rules-Requires-Root: field and set it to 'no'.
   * d/copyright: Update copyright attributions.
+  * d/upstream/metadata: Add file. Comply with DEP-12.
 
- -- Mike Gabriel <sunweaver@debian.org>  Mon, 04 May 2020 16:08:59 +0200
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 04 May 2020 16:37:58 +0200
 
 php-horde-prefs (2.9.0-4) unstable; urgency=medium
 
