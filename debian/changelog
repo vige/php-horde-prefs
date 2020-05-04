@@ -1,4 +1,4 @@
-php-horde-prefs (2.9.0-5) UNRELEASED; urgency=medium
+php-horde-prefs (2.9.0-5) unstable; urgency=medium
 
   * Re-upload to Debian. (Closes: #959272).
 
@@ -9,7 +9,7 @@ php-horde-prefs (2.9.0-5) UNRELEASED; urgency=medium
   * d/copyright: Update copyright attributions.
   * d/upstream/metadata: Add file. Comply with DEP-12.
 
- -- Mike Gabriel <sunweaver@debian.org>  Mon, 04 May 2020 16:37:58 +0200
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 04 May 2020 21:40:10 +0200
 
 php-horde-prefs (2.9.0-4) unstable; urgency=medium
 
