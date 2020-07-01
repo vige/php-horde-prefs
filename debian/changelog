@@ -1,4 +1,4 @@
-php-horde-prefs (2.9.0-6) UNRELEASED; urgency=medium
+php-horde-prefs (2.9.0-6) unstable; urgency=medium
 
   [ Mike Gabriel ]
   * d/tests/control: Stop using deprecated needs-recommends restriction.
@@ -8,7 +8,7 @@ php-horde-prefs (2.9.0-6) UNRELEASED; urgency=medium
   [ Juri Grabowski ]
   * d/salsa-ci.yml: enable aptly
 
- -- Mike Gabriel <sunweaver@debian.org>  Wed, 01 Jul 2020 10:07:45 +0200
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 01 Jul 2020 11:31:27 +0200
 
 php-horde-prefs (2.9.0-5) unstable; urgency=medium
 
