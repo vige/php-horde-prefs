@@ -1,3 +1,16 @@
+php-horde-prefs (2.9.0-7) unstable; urgency=medium
+
+  * d/patches: Add debian/patches/1010_phpunit-8.x+9.x.patch.
+    Fix tests with PHPUnit 8.x/9.x.
+  * d/t/control: Require php-horde-test (>= 2.6.4+debian0-5~).
+  * d/t/control: Require php-horde-kolab-storage, php-horde-log.
+  * d/t/{control,phpunit}: Enable MySQL'ish PHPUnit tests against
+    a MySQL DB Server in the autopkgtest testbed.
+  * d/t/control: Require php-horde-cli.
+  * d/t/control: Require php-horde-history.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 22 Jul 2020 15:48:44 +0200
+
 php-horde-prefs (2.9.0-6) unstable; urgency=medium
 
   [ Mike Gabriel ]
