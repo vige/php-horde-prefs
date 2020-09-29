@@ -10,4 +10,8 @@ export PREFS_SQL_PDO_PGSQL_TEST_CONFIG='{"prefs":{"sql":{"pdo_pgsql":{"adapter":
 mysql -e "create database IF NOT EXISTS test; ALTER USER 'root'@'localhost' IDENTIFIED WITH 'mysql_native_password' BY 'r00t';" -uroot
 
 cd Horde_Prefs*/test/./Horde/Prefs
-phpunit -v .
+
+# We drop privileges to run tests
+touch .phpunit.result.cache
+chown www-data:www-data .phpunit.result.cache
+su www-data --preserve-environment --shell /bin/sh --command 'phpunit -v .'
