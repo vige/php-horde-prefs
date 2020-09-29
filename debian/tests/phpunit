@@ -8,6 +8,9 @@ export PREFS_SQL_PDO_MYSQL_TEST_CONFIG='{"prefs":{"sql":{"pdo_mysql":{"adapter":
 export PREFS_SQL_PDO_PGSQL_TEST_CONFIG='{"prefs":{"sql":{"pdo_pgsql":{"adapter": "pdo_pgsql", "host":"localhost","username":"test","password":"test","dbname":"test","charset":"utf-8"}}}}'
 
 mysql -e "create database IF NOT EXISTS test; ALTER USER 'root'@'localhost' IDENTIFIED WITH 'mysql_native_password' BY 'r00t';" -uroot
+su postgres --command 'createdb test'
+su postgres --command "psql -c \"CREATE USER test WITH PASSWORD 'test';\""
+su postgres --command "psql -c \"GRANT ALL ON DATABASE test TO test;\""
 
 cd Horde_Prefs*/test/./Horde/Prefs
 
