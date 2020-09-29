@@ -1,3 +1,13 @@
+php-horde-prefs (2.9.0-8) unstable; urgency=medium
+
+  * d/t/phpunit: Fix PgSQL authentication variables (user, password).
+  * d/t/phpunit: Drop privileges to www-data before running unit tests.
+  * d/t/phpunit: Bootstrap PostgreSQL server in the test bed.
+  * d/t/control: Require php-pgsql, postgresql.
+  * d/t/control: Require php-sqlite3 (and thus enabled PDO_SQLite tests).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 29 Sep 2020 18:29:39 +0200
+
 php-horde-prefs (2.9.0-7) unstable; urgency=medium
 
   * d/patches: Add debian/patches/1010_phpunit-8.x+9.x.patch.
