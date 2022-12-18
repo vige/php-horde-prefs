@@ -1,3 +1,14 @@
+php-horde-prefs (2.9.0-9) unstable; urgency=medium
+
+  * Team upload.
+
+  * d/salsa-ci.yml: simplify the CI
+  * d/patches: Fix autopkgtest failure due to php8.1 changes. (Closes: #1003648)
+  * d/watch: Update file format version to 4.
+  * d/control: Update standards version to 4.6.1, no changes needed.
+
+ -- Anton Gladky <gladk@debian.org>  Sun, 18 Dec 2022 09:47:37 +0100
+
 php-horde-prefs (2.9.0-8) unstable; urgency=medium
 
   * d/t/phpunit: Fix PgSQL authentication variables (user, password).
