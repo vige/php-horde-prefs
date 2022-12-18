@@ -1,0 +1,32 @@
+Description: Fix autopkgtest failure due to php8.1 changes
+Author: Anton Gladky <gladk@debian.org>
+Last-Update: 2022-12-16
+
+--- php-horde-prefs-2.9.0.orig/Horde_Prefs-2.9.0/lib/Horde/Prefs.php
++++ php-horde-prefs-2.9.0/Horde_Prefs-2.9.0/lib/Horde/Prefs.php
+@@ -527,21 +527,25 @@ class Horde_Prefs implements ArrayAccess
+ 
+     /* ArrayAccess methods. */
+ 
++    #[\ReturnTypeWillChange]
+     public function offsetExists($offset)
+     {
+         return !is_null($this->getValue($offset));
+     }
+ 
++    #[\ReturnTypeWillChange]
+     public function offsetGet($offset)
+     {
+         return $this->getValue($offset);
+     }
+ 
++    #[\ReturnTypeWillChange]
+     public function offsetSet($offset, $value)
+     {
+         $this->setValue($offset, $value);
+     }
+ 
++    #[\ReturnTypeWillChange]
+     public function offsetUnset($offset)
+     {
+         $this->remove($offset);
