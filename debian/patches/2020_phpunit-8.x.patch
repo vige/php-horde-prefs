@@ -1,0 +1,58 @@
+Index: php-horde-prefs/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
+===================================================================
+--- php-horde-prefs.orig/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
++++ php-horde-prefs/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
+@@ -415,7 +415,7 @@ implements ArrayAccess, Countable, Itera
+     /**
+      * @since 2.7.0
+      */
+-    public function offsetExists($offset)
++    public function offsetExists($offset): bool
+     {
+         return isset($this->_identities[$offset]);
+     }
+@@ -423,7 +423,7 @@ implements ArrayAccess, Countable, Itera
+     /**
+      * @since 2.7.0
+      */
+-    public function offsetGet($offset)
++    public function offsetGet($offset): mixed
+     {
+         return $this->get($offset);
+     }
+@@ -431,7 +431,7 @@ implements ArrayAccess, Countable, Itera
+     /**
+      * @since 2.7.0
+      */
+-    public function offsetSet($offset, $value)
++    public function offsetSet($offset, $value): void
+     {
+         // $value is ignored.
+         $this->set($offset);
+@@ -440,7 +440,7 @@ implements ArrayAccess, Countable, Itera
+     /**
+      * @since 2.7.0
+      */
+-    public function offsetUnset($offset)
++    public function offsetUnset($offset): void
+     {
+         $this->delete($offset);
+     }
+@@ -450,7 +450,7 @@ implements ArrayAccess, Countable, Itera
+     /**
+      * @since 2.7.0
+      */
+-    public function count()
++    public function count(): int
+     {
+         return count($this->_identities);
+     }
+@@ -460,7 +460,7 @@ implements ArrayAccess, Countable, Itera
+     /**
+      * @since 2.7.0
+      */
+-    public function getIterator()
++    public function getIterator(): Traversable
+     {
+         return new ArrayIterator($this->_identities);
+     }
