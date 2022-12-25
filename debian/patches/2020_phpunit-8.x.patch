@@ -1,8 +1,26 @@
-Index: php-horde-prefs/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
+Index: php-horde-prefs_2.9.0.orig/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
 ===================================================================
---- php-horde-prefs.orig/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
-+++ php-horde-prefs/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
-@@ -415,7 +415,7 @@ implements ArrayAccess, Countable, Itera
+--- php-horde-prefs_2.9.0.orig.orig/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
++++ php-horde-prefs_2.9.0.orig/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
+@@ -98,11 +98,13 @@ implements ArrayAccess, Countable, Itera
+         $this->_prefs = $params['prefs'];
+         $this->_user = $params['user'];
+ 
+-        if (!($this->_identities = @unserialize($this->_prefs->getValue($this->_prefnames['identities'])))) {
+-            $this->_identities = $this->_prefs->getDefault($this->_prefnames['identities']);
+-        }
++        foreach ($this->_prefs as $val) {
++            if (!($this->_identities = @unserialize($val->getValue($this->_prefnames['identities'])))) {
++                $this->_identities = $val->getDefault($this->_prefnames['identities']);
++            }
+ 
+-        $this->setDefault($this->_prefs->getValue($this->_prefnames['default_identity']));
++            $this->setDefault($val->getValue($this->_prefnames['default_identity']));
++        }
+     }
+ 
+     /**
+@@ -415,7 +417,7 @@ implements ArrayAccess, Countable, Itera
      /**
       * @since 2.7.0
       */
@@ -11,7 +29,7 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
      {
          return isset($this->_identities[$offset]);
      }
-@@ -423,7 +423,7 @@ implements ArrayAccess, Countable, Itera
+@@ -423,7 +425,7 @@ implements ArrayAccess, Countable, Itera
      /**
       * @since 2.7.0
       */
@@ -20,7 +38,7 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
      {
          return $this->get($offset);
      }
-@@ -431,7 +431,7 @@ implements ArrayAccess, Countable, Itera
+@@ -431,7 +433,7 @@ implements ArrayAccess, Countable, Itera
      /**
       * @since 2.7.0
       */
@@ -29,7 +47,7 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
      {
          // $value is ignored.
          $this->set($offset);
-@@ -440,7 +440,7 @@ implements ArrayAccess, Countable, Itera
+@@ -440,7 +442,7 @@ implements ArrayAccess, Countable, Itera
      /**
       * @since 2.7.0
       */
@@ -38,7 +56,7 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
      {
          $this->delete($offset);
      }
-@@ -450,7 +450,7 @@ implements ArrayAccess, Countable, Itera
+@@ -450,7 +452,7 @@ implements ArrayAccess, Countable, Itera
      /**
       * @since 2.7.0
       */
@@ -47,7 +65,7 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
      {
          return count($this->_identities);
      }
-@@ -460,7 +460,7 @@ implements ArrayAccess, Countable, Itera
+@@ -460,7 +462,7 @@ implements ArrayAccess, Countable, Itera
      /**
       * @since 2.7.0
       */
