@@ -1,3 +1,4 @@
 Tests: phpunit
 Restrictions: needs-root isolation-container
 Depends: @, php-cli, php-horde-test (>= 2.6.4+debian0-5~), php-horde-kolab-storage, php-horde-log, mysql-server, php-mysql, postgresql, php-pgsql, php-sqlite3, php-horde-db, php-horde-cli, php-horde-history
+Restrictions: allow-stderr

@@ -1,7 +1,7 @@
-Index: php-horde-prefs_2.9.0.orig/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
+Index: php-horde-prefs/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
 ===================================================================
---- php-horde-prefs_2.9.0.orig.orig/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
-+++ php-horde-prefs_2.9.0.orig/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
+--- php-horde-prefs.orig/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
++++ php-horde-prefs/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
 @@ -98,11 +98,13 @@ implements ArrayAccess, Countable, Itera
          $this->_prefs = $params['prefs'];
          $this->_user = $params['user'];
@@ -74,3 +74,47 @@ Index: php-horde-prefs_2.9.0.orig/Horde_Prefs-2.9.0/lib/Horde/Prefs/Identity.php
      {
          return new ArrayIterator($this->_identities);
      }
+Index: php-horde-prefs/Horde_Prefs-2.9.0/lib/Horde/Prefs/Scope.php
+===================================================================
+--- php-horde-prefs.orig/Horde_Prefs-2.9.0/lib/Horde/Prefs/Scope.php
++++ php-horde-prefs/Horde_Prefs-2.9.0/lib/Horde/Prefs/Scope.php
+@@ -276,6 +276,7 @@ class Horde_Prefs_Scope implements Itera
+ 
+     /**
+      */
++    #[\ReturnTypeWillChange]
+     public function current()
+     {
+         return $this->_fromInternal($this->key());
+@@ -283,6 +284,7 @@ class Horde_Prefs_Scope implements Itera
+ 
+     /**
+      */
++    #[\ReturnTypeWillChange]
+     public function key()
+     {
+         return key($this->_prefs);
+@@ -290,6 +292,7 @@ class Horde_Prefs_Scope implements Itera
+ 
+     /**
+      */
++    #[\ReturnTypeWillChange]
+     public function next()
+     {
+         return next($this->_prefs);
+@@ -297,6 +300,7 @@ class Horde_Prefs_Scope implements Itera
+ 
+     /**
+      */
++    #[\ReturnTypeWillChange]
+     public function rewind()
+     {
+         return reset($this->_prefs);
+@@ -304,6 +308,7 @@ class Horde_Prefs_Scope implements Itera
+ 
+     /**
+      */
++    #[\ReturnTypeWillChange]
+     public function valid()
+     {
+         return !is_null(key($this->_prefs));
