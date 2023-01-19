@@ -1,3 +1,9 @@
+php-horde-prefs (2.9.0-10) UNRELEASED; urgency=medium
+
+  * d/control: Bump Standards-Version: to 4.6.2. No changes needed.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Thu, 19 Jan 2023 08:58:07 +0100
+
 php-horde-prefs (2.9.0-9) unstable; urgency=medium
 
   * Team upload.
