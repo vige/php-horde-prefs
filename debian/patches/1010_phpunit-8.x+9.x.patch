@@ -1,10 +1,25 @@
-Description: Adapt to PHPUnit 8.x and 9.x API.
-Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+From: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+Date: Thu, 9 Nov 2023 16:30:53 +0200
+Subject: Adapt to PHPUnit 8.x and 9.x API.
 
-Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/IdentityTest.php
-===================================================================
---- php-horde-prefs.orig/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/IdentityTest.php
-+++ php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/IdentityTest.php
+---
+ Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/IdentityTest.php      | 10 +++++-----
+ Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/FileTest.php  | 11 ++++-------
+ .../test/Horde/Prefs/Unit/Storage/KolabImapLogTest.php        |  2 +-
+ .../test/Horde/Prefs/Unit/Storage/KolabImapTest.php           | 11 +++++------
+ Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Base.php  |  6 +++---
+ .../test/Horde/Prefs/Unit/Storage/Sql/MysqlTest.php           |  2 +-
+ .../test/Horde/Prefs/Unit/Storage/Sql/MysqliTest.php          |  2 +-
+ .../test/Horde/Prefs/Unit/Storage/Sql/Oci8Test.php            |  2 +-
+ .../test/Horde/Prefs/Unit/Storage/Sql/Pdo/MysqlTest.php       |  2 +-
+ .../test/Horde/Prefs/Unit/Storage/Sql/Pdo/PgsqlTest.php       |  2 +-
+ .../test/Horde/Prefs/Unit/Storage/Sql/Pdo/SqliteTest.php      |  2 +-
+ 11 files changed, 24 insertions(+), 28 deletions(-)
+
+diff --git a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/IdentityTest.php b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/IdentityTest.php
+index 40116b3..f3f9a68 100644
+--- a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/IdentityTest.php
++++ b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/IdentityTest.php
 @@ -23,13 +23,13 @@
   * @link      http://pear.horde.org/index.php?package=Prefs
   * @package   Prefs
@@ -21,7 +36,7 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/IdentityTest.php
      {
          $this->identity = new Horde_Prefs_Identity(array(
              'prefs' => new Horde_Prefs(
-@@ -55,7 +55,7 @@ class Horde_Prefs_Unit_IdentityTest exte
+@@ -55,7 +55,7 @@ class Horde_Prefs_Unit_IdentityTest extends PHPUnit_Framework_TestCase
      {
          $this->identity->add(array());
  
@@ -30,7 +45,7 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/IdentityTest.php
          $this->assertNull($this->identity->get(1));
      }
  
-@@ -89,7 +89,7 @@ class Horde_Prefs_Unit_IdentityTest exte
+@@ -89,7 +89,7 @@ class Horde_Prefs_Unit_IdentityTest extends PHPUnit_Framework_TestCase
      {
          $this->identity->add(array());
  
@@ -39,7 +54,7 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/IdentityTest.php
          $this->assertNull($this->identity[1]);
      }
  
-@@ -99,7 +99,7 @@ class Horde_Prefs_Unit_IdentityTest exte
+@@ -99,7 +99,7 @@ class Horde_Prefs_Unit_IdentityTest extends PHPUnit_Framework_TestCase
      {
          $this->identity->add(array());
  
@@ -48,10 +63,10 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/IdentityTest.php
  
          unset($this->identity[0]);
  
-Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/FileTest.php
-===================================================================
---- php-horde-prefs.orig/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/FileTest.php
-+++ php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/FileTest.php
+diff --git a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/FileTest.php b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/FileTest.php
+index d6e93cf..3d9b9f5 100644
+--- a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/FileTest.php
++++ b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/FileTest.php
 @@ -25,26 +25,23 @@
   * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
   * @link     http://pear.horde.org/index.php?package=Prefs
@@ -83,10 +98,10 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/FileTest.
          $b = new Horde_Prefs_Storage_File('nobody', array('directory' => Horde_Util::createTempDir()));
      }
  }
-Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImapLogTest.php
-===================================================================
---- php-horde-prefs.orig/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImapLogTest.php
-+++ php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImapLogTest.php
+diff --git a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImapLogTest.php b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImapLogTest.php
+index 0a48de3..bc36ddc 100644
+--- a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImapLogTest.php
++++ b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImapLogTest.php
 @@ -27,7 +27,7 @@
   */
  class Horde_Prefs_Unit_Storage_KolabImapLogTest extends Horde_Test_Log
@@ -96,10 +111,10 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImap
      {
          if (!class_exists('Horde_Kolab_Storage_Factory')) {
              $this->markTestSkipped('Horde_Kolab_Storage package is missing');
-Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImapTest.php
-===================================================================
---- php-horde-prefs.orig/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImapTest.php
-+++ php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImapTest.php
+diff --git a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImapTest.php b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImapTest.php
+index 5b627f1..450c240 100644
+--- a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImapTest.php
++++ b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImapTest.php
 @@ -21,9 +21,9 @@
   * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
   * @link     http://pear.horde.org/index.php?package=Prefs
@@ -112,7 +127,7 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImap
      {
          if (!class_exists('Horde_Kolab_Storage_Factory')) {
              $this->markTestSkipped('Horde_Kolab_Storage package is missing');
-@@ -31,16 +31,15 @@ class Horde_Prefs_Unit_Storage_KolabImap
+@@ -31,16 +31,15 @@ class Horde_Prefs_Unit_Storage_KolabImapTest extends PHPUnit_Framework_TestCase
          $_SESSION = array();
      }
  
@@ -131,7 +146,7 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImap
          $b = new Horde_Prefs_Storage_KolabImap(
              'nobody', array('kolab' => $this->_createDefaultStorage())
          );
-@@ -163,7 +162,7 @@ class Horde_Prefs_Unit_Storage_KolabImap
+@@ -163,7 +162,7 @@ class Horde_Prefs_Unit_Storage_KolabImapTest extends PHPUnit_Framework_TestCase
                      'data' => array('queryset' => 'horde'),
                  ),
                  'cache'  => new Horde_Cache(new Horde_Cache_Storage_Mock()),
@@ -140,11 +155,11 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/KolabImap
              )
          );
          return $factory->create();
-Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Base.php
-===================================================================
---- php-horde-prefs.orig/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Base.php
-+++ php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Base.php
-@@ -55,7 +55,7 @@ class Horde_Prefs_Test_Sql_Base extends
+diff --git a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Base.php b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Base.php
+index ae63572..ef298c8 100644
+--- a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Base.php
++++ b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Base.php
+@@ -55,7 +55,7 @@ class Horde_Prefs_Test_Sql_Base extends Horde_Test_Case
          );
      }
  
@@ -153,7 +168,7 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Base.
      {
          $logger = new Horde_Log_Logger(new Horde_Log_Handler_Cli());
          //self::$db->setLogger($logger);
-@@ -81,7 +81,7 @@ class Horde_Prefs_Test_Sql_Base extends
+@@ -81,7 +81,7 @@ class Horde_Prefs_Test_Sql_Base extends Horde_Test_Case
          self::$prefs = new Horde_Prefs_Storage_Sql('joe', array('db' => self::$db));
      }
  
@@ -162,7 +177,7 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Base.
      {
          self::$prefs = null;
          if (self::$db) {
-@@ -97,7 +97,7 @@ class Horde_Prefs_Test_Sql_Base extends
+@@ -97,7 +97,7 @@ class Horde_Prefs_Test_Sql_Base extends Horde_Test_Case
          }
      }
  
@@ -171,10 +186,10 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Base.
      {
          if (!self::$db) {
              $this->markTestSkipped(self::$reason);
-Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/MysqlTest.php
-===================================================================
---- php-horde-prefs.orig/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/MysqlTest.php
-+++ php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/MysqlTest.php
+diff --git a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/MysqlTest.php b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/MysqlTest.php
+index 4f53126..110b676 100644
+--- a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/MysqlTest.php
++++ b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/MysqlTest.php
 @@ -15,7 +15,7 @@ require_once __DIR__ . '/Base.php';
   */
  class Horde_Prefs_Unit_Storage_Sql_MysqlTest extends Horde_Prefs_Test_Sql_Base
@@ -184,10 +199,10 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Mysql
      {
          if (!extension_loaded('mysql')) {
              self::$reason = 'No mysql extension';
-Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/MysqliTest.php
-===================================================================
---- php-horde-prefs.orig/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/MysqliTest.php
-+++ php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/MysqliTest.php
+diff --git a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/MysqliTest.php b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/MysqliTest.php
+index 4046863..b083b77 100644
+--- a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/MysqliTest.php
++++ b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/MysqliTest.php
 @@ -15,7 +15,7 @@ require_once __DIR__ . '/Base.php';
   */
  class Horde_Prefs_Unit_Storage_Sql_MysqliTest extends Horde_Prefs_Test_Sql_Base
@@ -197,10 +212,10 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Mysql
      {
          if (!extension_loaded('mysqli')) {
              self::$reason = 'No mysqli extension';
-Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Oci8Test.php
-===================================================================
---- php-horde-prefs.orig/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Oci8Test.php
-+++ php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Oci8Test.php
+diff --git a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Oci8Test.php b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Oci8Test.php
+index 0bcb6f7..01857e0 100644
+--- a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Oci8Test.php
++++ b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Oci8Test.php
 @@ -15,7 +15,7 @@ require_once __DIR__ . '/Base.php';
   */
  class Horde_Prefs_Unit_Storage_Sql_Oci8Test extends Horde_Prefs_Test_Sql_Base
@@ -210,10 +225,10 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Oci8T
      {
          if (!extension_loaded('oci8')) {
              self::$reason = 'No oci8 extension';
-Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/MysqlTest.php
-===================================================================
---- php-horde-prefs.orig/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/MysqlTest.php
-+++ php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/MysqlTest.php
+diff --git a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/MysqlTest.php b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/MysqlTest.php
+index 73accaf..b1664b9 100644
+--- a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/MysqlTest.php
++++ b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/MysqlTest.php
 @@ -15,7 +15,7 @@ require_once __DIR__ . '/../Base.php';
   */
  class Horde_Prefs_Unit_Storage_Sql_Pdo_MysqlTest extends Horde_Prefs_Test_Sql_Base
@@ -223,10 +238,10 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/M
      {
          if (!extension_loaded('pdo') ||
              !in_array('mysql', PDO::getAvailableDrivers())) {
-Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/PgsqlTest.php
-===================================================================
---- php-horde-prefs.orig/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/PgsqlTest.php
-+++ php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/PgsqlTest.php
+diff --git a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/PgsqlTest.php b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/PgsqlTest.php
+index fb7051f..e03a15c 100644
+--- a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/PgsqlTest.php
++++ b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/PgsqlTest.php
 @@ -15,7 +15,7 @@ require_once __DIR__ . '/../Base.php';
   */
  class Horde_Prefs_Unit_Storage_Sql_Pdo_PgsqlTest extends Horde_Prefs_Test_Sql_Base
@@ -236,10 +251,10 @@ Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/P
      {
          if (!extension_loaded('pdo') ||
              !in_array('pgsql', PDO::getAvailableDrivers())) {
-Index: php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/SqliteTest.php
-===================================================================
---- php-horde-prefs.orig/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/SqliteTest.php
-+++ php-horde-prefs/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/SqliteTest.php
+diff --git a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/SqliteTest.php b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/SqliteTest.php
+index 92c59a7..72ae6ae 100644
+--- a/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/SqliteTest.php
++++ b/Horde_Prefs-2.9.0/test/Horde/Prefs/Unit/Storage/Sql/Pdo/SqliteTest.php
 @@ -15,7 +15,7 @@ require_once __DIR__ . '/../Base.php';
   */
  class Horde_Prefs_Unit_Storage_Sql_Pdo_SqliteTest extends Horde_Prefs_Test_Sql_Base

@@ -1,8 +1,11 @@
-php-horde-prefs (2.9.0-10) UNRELEASED; urgency=medium
+php-horde-prefs (2.9.0-10~1.gbp92e060) UNRELEASED; urgency=medium
 
+  ** SNAPSHOT build @92e060b60c1c621d7c2d340f9fc9d76a90494989 **
+
+  [ Mike Gabriel ]
   * d/control: Bump Standards-Version: to 4.6.2. No changes needed.
 
- -- Mike Gabriel <sunweaver@debian.org>  Thu, 19 Jan 2023 08:58:07 +0100
+ -- Ville Nummela <ville@nummela.org>  Thu, 09 Nov 2023 16:34:22 +0200
 
 php-horde-prefs (2.9.0-9) unstable; urgency=medium
 
